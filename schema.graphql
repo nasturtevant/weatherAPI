@@ -1,0 +1,81 @@
+schema {
+  query: Query
+}
+
+type City {
+  id: Int
+  name: String
+  coord: CoordType
+  country: String
+  population: Int
+  timezone: Int
+  sunrise: Int
+  sunset: Int
+}
+
+type CloudsDataType {
+  all: Int
+}
+
+type CoordType {
+  lat: Float
+  lon: Float
+}
+
+type ForecastItemType {
+  datetime: String
+  main: MainDataType
+  weather: [WeatherDataType]
+  clouds: CloudsDataType
+  wind: WindDataType
+  visibility: Int
+  pop: Int
+  sys: SysDataType
+  dtTxt: String
+}
+
+input GeoInput {
+  lat: Float!
+  lon: Float!
+}
+
+type MainDataType {
+  temp: Float
+  feelsLike: Float
+  tempMin: Float
+  tempMax: Float
+  pressure: Int
+  seaLevel: Int
+  grndLevel: Int
+  humidity: Int
+  tempKf: Float
+}
+
+type Query {
+  weather(geo: GeoInput!): WeatherForecastType
+}
+
+type SysDataType {
+  pod: String
+}
+
+type WeatherDataType {
+  id: Int
+  main: String
+  description: String
+  icon: String
+}
+
+type WeatherForecastType {
+  cod: String
+  message: Int
+  cnt: Int
+  list: [ForecastItemType]
+  city: City
+}
+
+type WindDataType {
+  speed: Float
+  deg: Int
+  gust: Float
+}
