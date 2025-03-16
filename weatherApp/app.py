@@ -20,7 +20,7 @@ class WeatherAPI:
         logger.info(f"Initializing WeatherAPI with lat: {lat} and lon: {lon}")
         self.lat = lat
         self.lon = lon
-        self.api_key = '2e4511a50a12b4312f8854152a5f7efc'
+        self.api_key = api_key
         self.units = 'imperial'
         # self.wind_speed = wind_speed
         # self.low_temp = low_temp
