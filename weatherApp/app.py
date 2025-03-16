@@ -15,12 +15,12 @@ logger = logging.getLogger(__name__)
 
 class WeatherAPI:
     
-    def __init__(self, lat, lon):
+    def __init__(self, lat, lon, units):
         logger.setLevel(logging.DEBUG)
         logger.info(f"Initializing WeatherAPI with lat: {lat} and lon: {lon}")
         self.lat = lat
         self.lon = lon
-        self.api_key = api_key
+        self.api_key = '4f41c325c51e63224b572656d37c6b27'
         self.units = 'imperial'
         # self.wind_speed = wind_speed
         # self.low_temp = low_temp
@@ -36,12 +36,12 @@ class WeatherAPI:
         try:
             response = requests.get(url)
             if response.status_code != 200:
-                raise Exception(f"Failed to retrieve weather data: {resonse.status_code}")
+                raise Exception(f"Failed to retrieve weather data: {response.status_code}")
         except Exception as e:
-            logger.error("Error getting weather data: {}".format(e))
-            return "Error getting weather data: {}".format(e)
+            logger.error(f"Error getting weather data: {e}")
+            return f"Error getting weather data: {e}"
         logger.info("Successfully retrieved weather data")
-        data = json.loads(response.text)
+        data = response.json()
 
         return data
 

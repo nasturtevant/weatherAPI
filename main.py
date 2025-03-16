@@ -1,6 +1,6 @@
 from weatherApp.app import WeatherAPI
 from utilities import Utilities
-from graphene import InputObjectType, ObjectType, String, Schema, Float, Int, List, Field, JSONString
+from graphene import InputObjectType, ObjectType, String, Schema, Float, Int, List, Field, JSONString, Enum
 import json
 from flask import Flask
 from flask_graphql import GraphQLView
@@ -22,6 +22,12 @@ class CoordType(ObjectType):
     lat = Float()
     lon = Float()
 
+class Unit(Enum):
+    IMPERIAL = 'imperial'
+    METRIC = 'metric'
+
+class UnitsInput(InputObjectType):
+    unit = Unit()
 
 class City(ObjectType):
     id = Int()
@@ -160,7 +166,7 @@ def getSchema():
 
     
 if __name__ == "__main__":
-    print_schema(schema)
+    # print_schema(schema)
     logger.info("Starting server...")
-    # app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
     

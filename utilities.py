@@ -4,5 +4,5 @@ import sys
 class Utilities:
 
     def convert_time(epoch):
-        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch), timedelta(hours=-2))
+        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch))
 
