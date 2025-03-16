@@ -1,0 +1,56 @@
+{    
+"cod": "200",
+"message": 0,
+"cnt": 40,
+"list": [
+    {
+        "dt": 1742050800,
+        "main": {
+            "temp": 46.29,
+            "feels_like": 43.27,
+            "temp_min": 46.29,
+            "temp_max": 57.06,
+            "pressure": 1018,
+            "sea_level": 1018,
+            "grnd_level": 1005,
+            "humidity": 68,
+            "temp_kf": -5.98
+        },
+        "weather": [
+            {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+            }
+        ],
+        "clouds": {
+            "all": 22
+        },
+        "wind": {
+            "speed": 5.97,
+            "deg": 177,
+            "gust": 12.21
+        },
+        "visibility": 10000,
+        "pop": 0,
+        "sys": {
+            "pod": "d"
+        },
+        "dt_txt": "2025-03-15 15:00:00"
+    }
+],
+"city": {
+    "id": 4744309,
+    "name": "Amelia Court House",
+    "coord": {
+        "lat": 37.3978,
+        "lon": -78.1
+    },
+    "country": "US",
+    "population": 1099,
+    "timezone": -14400,
+    "sunrise": 1742037790,
+    "sunset": 1742080765
+}
+}
